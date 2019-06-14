@@ -1,0 +1,82 @@
+#To use this MAKEFIILE, you need:
+#
+#Turbo-Pascal 6.0
+#Turbo-Assembler 1.00 or higher
+#4DOS Version 3.00 or higher
+#LZEXE Version 0.91
+
+
+#Assembler-Options
+AOPT = /w2 /jQuirks
+
+#Delete garbage
+DELMAP = $(COMSPEC) /C DEL *.obj *.map *.bak *.sik *.old
+
+#Don't generate 286 Code
+286 = /$G-
+
+#English-Language
+LANG = 1
+
+.pas.exe:
+  tpc /DL$(LANG) $(286) $*
+  lzexe $*
+  $(COMSPEC) /C del $*.old
+
+.pas.tpu:
+  tpc /DL$(LANG) $(286) $*
+
+all: fdform18.zip
+
+fdread.exe: fdread.asm cputest.asm
+  tasm fdread,fdread,fdread $(AOPT) /DCPU=/$G+
+  tlink fdread
+  lzexe fdread.exe
+  $(DELMAP)
+
+fdr88.exe: fdread.asm
+  tasm fdread,fdread,fdr88 $(AOPT) /DCPU=/$G-
+  tlink fdread, fdr88.exe
+  lzexe fdr88.exe
+  $(DELMAP)
+
+fdboot.049: fdboot.asm getboot.exe
+  tasm fdboot $(AOPT) /DLanguage=049
+  tlink /t fdboot,fdboot.sys
+  $(DELMAP)
+  getboot fdboot.sys fdboot.049
+
+fdboot.001: fdboot.asm getboot.exe
+  tasm fdboot $(AOPT) /DLanguage=001
+  tlink /t fdboot,fdboot.sys
+  $(DELMAP)
+  getboot fdboot.sys fdboot.001
+
+german\fdformat.exe: fdformat.pas baseconv.tpu desqview.tpu fdboot.049 auxdos.tpu
+  tpc /DL49 $(286) $&
+  lzexe $&
+  $(COMSPEC) /C del $&.old
+  $(COMSPEC) /C move fdformat.exe german
+
+fdformat.exe: fdformat.pas baseconv.tpu desqview.tpu fdboot.001 auxdos.tpu
+  tpc /DL1 $(286) $*
+  lzexe $*
+  $(COMSPEC) /C del $*.old
+
+baseconv.tpu: baseconv.pas
+
+desqview.tpu: desqview.pas
+
+auxdos.tpu: auxdos.pas
+
+diskio.tpu: diskio.pas
+  tpc $(286) diskio
+
+getboot.exe: getboot.pas
+
+readboot.exe: readboot.pas diskio.tpu auxdos.tpu
+
+wimage.exe: wimage.pas diskio.tpu auxdos.tpu
+
+fdform18.zip: fdread.exe fdr88.exe german\fdformat.exe fdformat.exe getboot.exe readboot.exe fdboot.sys fdboot.049 fdboot.001 wimage.exe fdformat.new readme.1st makefile
+  pkzip -f -rp fdform18.zip

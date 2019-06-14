@@ -1,0 +1,34 @@
+IF YOU HAVEN'T UNPACKED THIS ARCHIVE WITH PKUNZIP /D, DELETE ALL FILES
+EXCEPT FDFORM17.ZIP AND TRY AGAIN WITH PKUNZIP /D.
+
+The following files should be included in the archive:
+
+AUXDOS.PAS          - Supplemental DOS Routines in TP 6.0
+AUXDOS.TPU          - Compiled Unit of AUXDOS.PAS
+BASECONV.PAS        - Number Base Conversion in TP 6.0
+BASECONV.TPU        - Compiled Unit of BASECONV.PAS
+CPUTEST.ASM         - Test for the CPU-Type in Assembler
+DESQVIEW.PAS        - Desqview aware routines
+DESQVIEW.TPU        - Compiled Unit of DESQVIEW.PAS
+DISKIO.PAS          - low-level disk I/O routines in TP 6.0
+DISKIO.TPU          - Compiled Unit of DISKIO.PAS
+FDBOOT.001          - TP 6.0 readable File of FDBOOT.SYS in English
+FDBOOT.049          - TP 6.0 readable File of FDBOOT.SYS in German
+FDBOOT.ASM          - Source of FDBOOT
+FDBOOT.SYS          - Binary File of FDBOOT
+FDFORMAT.DOC        - Documentation of FDFORMAT
+FDFORMAT.EXE        - Executable FDFORMAT in English
+FDFORMAT.NEW        - What's new
+FDFORMAT.PAS        - TP 6.0 source of FDFORMAT
+FDR88.EXE           - XT version of TSR-disk-driver
+FDREAD.ASM          - Source of FDREAD/FDR88
+FDREAD.EXE          - AT version of TSR-disk-driver
+GERMAN/FDFORMAT.EXE - Executable FDFORMAT in German
+GETBOOT.EXE         - Make FDBOOT.001/049 from FDBOOT.SYS
+GETBOOT.PAS         - Source in TP 6.0 of GETBOOT
+MAKEFILE            - Makefile for FDFORMAT
+READBOOT.EXE        - Read/Write Boot-Sector from/to file
+READBOOT.PAS        - Source in TP 6.0 of READBOOT
+README.1ST          - This file
+WIMAGE.EXE          - Diskcopies to/from file
+WIMAGE.PAS          - Source of WIMAGE in TP 6.0

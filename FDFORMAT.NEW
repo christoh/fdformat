@@ -1,0 +1,34 @@
+Changes in Version 1.8:
+
+Added /W switch to do a format without erase.
+
+Added /Q and /U switches to work like DOS 5 FORMAT.
+
+Added /A switch to force only BIOS calls to be used, when switching
+the drive mode.
+
+FDFORMAT now displays on the screen, how the drive mode is changed.
+
+Added Volume Serial Number support.
+
+Uses DOS switch char to call COMMAND-SHELL and allows switch char to
+select options.
+
+A special 8088-Version of FDREAD was added, which is required on some
+XT systems.
+
+Full extended Boot-Record as introduced in DOS 4 is now used.
+
+Fixed problems with some Diskette-Cache Programs.
+
+FDFORMAT, WIMAGE and READBOOT now output errors through the standard
+error device of DOS.
+
+Ctrl-Break ist now trapped.
+
+New high loading technique for FDREAD, which allows loading high FDREAD on ANY 286
+with DOS 5 and the DOS=HIGH option installed in CONFIG.SYS.
+
+FDFORMAT 1.8 still does not support 2.88 MB drives. These will be supported in the
+next version. The next version will support 2.88 MB drives for BIOS-Versions, which
+do not support 2.88 MB drives.
