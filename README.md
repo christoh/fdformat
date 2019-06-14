@@ -106,9 +106,11 @@ If you do not preceed options with '/' or '-', you must seperate the
 options with spaces. '.' and ':' are always ignored. So the following 
 commands will all format a 1.44 MByte Disk in Drive A:
 
+```
  FDFORMAT A: /F:1.44
  FDFORMAT A: -F144
  FDFORMAT A: F144
+```
 
 You may precede all numbers with a $-sign to indicate, that they are 
 hexadecimal numbers.
@@ -116,35 +118,36 @@ hexadecimal numbers.
 OPTIONS USED IN FDFORMAT
 ------------------------
 
-
 The most important option is the F-Option. The F-Option determines the 
 general Format, which is used for the target diskette.
 
 The following table shows, which parameters are allowed for the F-
 Options and for which type of Disk-Drive:
 
-F-Opt Format          360k-Drive 720k-Drive 1.2M-Drive 1.44M-Drive
------ --------------- ---------- ---------- ---------- -----------
-F160  160 kByte Disk  yes        FDREAD     yes        FDREAD
-F180  180 kByte Disk  yes        FDREAD     yes        FDREAD
-F200  200 kByte Disk  FDREAD     FDREAD     FDREAD     FDREAD
-F205  205 kByte Disk  FDREAD     FDREAD     FDREAD     FDREAD
-F320  320 kByte Disk  yes        FDREAD     yes        FDREAD
-F360  360 kByte Disk  yes        FDREAD     yes        FDREAD
-F400  400 kByte Disk  FDREAD     FDREAD     FDREAD     FDREAD
-F410  410 kByte Disk  FDREAD     FDREAD     FDREAD     FDREAD
-F720  720 kByte Disk  no         yes        FDREAD     yes
-F800  800 kByte Disk  no         FDREAD     FDREAD     FDREAD
-F820  820 kByte Disk  no         FDREAD     FDREAD     FDREAD
-F120  1.2 MByte Disk  no         no         yes        yes
-F12   1.2 MByte Disk  no         no         yes        yes
-F144  1.44 MByte Disk no         no         FDREAD     yes
-F14   1.44 MByte Disk no         no         FDREAD     yes
-F148  1.48 MByte Disk no         no         FDREAD     yes
-F16   1.6 MByte Disk  no         no         no         FDREAD
-F164  1.64 MByte Disk no         no         no         FDREAD
-F168  1.68 MByte Disk no         no         no         FDREAD
-F172  1.72 MByte Disk no         no         no         FDREAD
+```
+	F-Opt Format          360k-Drive 720k-Drive 1.2M-Drive 1.44M-Drive
+	----- --------------- ---------- ---------- ---------- -----------
+	F160  160 kByte Disk  yes        FDREAD     yes        FDREAD
+	F180  180 kByte Disk  yes        FDREAD     yes        FDREAD
+	F200  200 kByte Disk  FDREAD     FDREAD     FDREAD     FDREAD
+	F205  205 kByte Disk  FDREAD     FDREAD     FDREAD     FDREAD
+	F320  320 kByte Disk  yes        FDREAD     yes        FDREAD
+	F360  360 kByte Disk  yes        FDREAD     yes        FDREAD
+	F400  400 kByte Disk  FDREAD     FDREAD     FDREAD     FDREAD
+	F410  410 kByte Disk  FDREAD     FDREAD     FDREAD     FDREAD
+	F720  720 kByte Disk  no         yes        FDREAD     yes
+	F800  800 kByte Disk  no         FDREAD     FDREAD     FDREAD
+	F820  820 kByte Disk  no         FDREAD     FDREAD     FDREAD
+	F120  1.2 MByte Disk  no         no         yes        yes
+	F12   1.2 MByte Disk  no         no         yes        yes
+	F144  1.44 MByte Disk no         no         FDREAD     yes
+	F14   1.44 MByte Disk no         no         FDREAD     yes
+	F148  1.48 MByte Disk no         no         FDREAD     yes
+	F16   1.6 MByte Disk  no         no         no         FDREAD
+	F164  1.64 MByte Disk no         no         no         FDREAD
+	F168  1.68 MByte Disk no         no         no         FDREAD
+	F172  1.72 MByte Disk no         no         no         FDREAD
+```
 
 FDREAD in the above table means, that this format will work only, if 
 FDREAD (or FDR88) is installed. You may find out, that this table will 
@@ -154,47 +157,50 @@ formats without FDREAD (or FDR88), that are listed to work with FDREAD
 
 The other options are:
 
-1    : Format single sided Disk (provided for DOS-FORMAT
-       compatibility).
-4    : Format Standard 360 kByte Disk (provided for DOS-FORMAT
-       compatibility).
-8    : Format 8 sector Disk (provided for DOS-FORMAT compatibility).
-A    : Use BIOS-Calls only to switch to different diskette types.
-Bnnn : Use Disk-Type Byte nnn (for use with older BIOS Versions).
-Cnnn : Use nnn Sectors per Cluster (nnn = 1 or 2).
-Dnnn : Use nnn Root-Directory-Entries (nnn = 1-224).
-Gnnn : Use Gap-Length of nnn (for use by experts only).
-Hnnn : Use nnn heads (nnn = 1 or 2).
-Innn : Use an Interleave of nnn (for use by experts only).
-K    : Do not wait for any keyboard input, when starting FDFORMAT.
-       (Useful, when starting FDFORMAT from batch files).
-Mnnn : Use Media Byte nnn (Useful for ATARI formats).
-Mnnn : Use Media-Descriptor-Byte nnn. (Useful when formatting ATARI ST
-       disks).
-Nnnn : Use nnn Sectors.
-O    : Format 720 kByte disk for use with AT&T/Olivetti M24/M28.
-Q    : Quick Format. Only rewrite the System-Area.
-R    : Do not verify disk (and save 33% time).
-S    : Make System-Disk.
-Snnn : Use nnn Sectors.
-Tnnn : Use nnn Tracks.
-U    : Unconditionally format the diskette.
-V    : Write Label to Disk.
-W    : Format with erase. Physically reformat diskette without data
-       loss
-Xnnn : Slide nnn Sectors, when head changes.
-Ynnn : Slide nnn Sectors nnn, when track changes.
+```
+    1    : Format single sided Disk (provided for DOS-FORMAT
+           compatibility).
+    4    : Format Standard 360 kByte Disk (provided for DOS-FORMAT
+           compatibility).
+    8    : Format 8 sector Disk (provided for DOS-FORMAT compatibility).
+    A    : Use BIOS-Calls only to switch to different diskette types.
+    Bnnn : Use Disk-Type Byte nnn (for use with older BIOS Versions).
+    Cnnn : Use nnn Sectors per Cluster (nnn = 1 or 2).
+    Dnnn : Use nnn Root-Directory-Entries (nnn = 1-224).
+    Gnnn : Use Gap-Length of nnn (for use by experts only).
+    Hnnn : Use nnn heads (nnn = 1 or 2).
+    Innn : Use an Interleave of nnn (for use by experts only).
+    K    : Do not wait for any keyboard input, when starting FDFORMAT.
+           (Useful, when starting FDFORMAT from batch files).
+    Mnnn : Use Media Byte nnn (Useful for ATARI formats).
+    Mnnn : Use Media-Descriptor-Byte nnn. (Useful when formatting ATARI ST
+           disks).
+    Nnnn : Use nnn Sectors.
+    O    : Format 720 kByte disk for use with AT&T/Olivetti M24/M28.
+    Q    : Quick Format. Only rewrite the System-Area.
+    R    : Do not verify disk (and save 33% time).
+    S    : Make System-Disk.
+    Snnn : Use nnn Sectors.
+    Tnnn : Use nnn Tracks.
+    U    : Unconditionally format the diskette.
+    V    : Write Label to Disk.
+    W    : Format with erase. Physically reformat diskette without data
+           loss
+    Xnnn : Slide nnn Sectors, when head changes.
+    Ynnn : Slide nnn Sectors nnn, when track changes.
+```
 
 Examples:
 
-FDFORMAT A: /4                                    (format 360 kB disk)
-FDFORMAT A: /F:1.72                              (format 1.72 MB disk)
-FDFORMAT A: /T:80 /N:9                            (format 720 kB disk)
-FDFORMAT A: /O                    (format 720 kB disk for AT&T M24/28)
-FDFORMAT A: /F:720 M$F7 B$54         (format 720 kB disk for ATARI ST)
-FDFORMAT A: /F:12 D64                (format 1.2 MB disk with 64 RDEs)
-FDFORMAT A: /F:410 R               (format 410 kB Disk without verify)
-
+```
+    FDFORMAT A: /4                                    (format 360 kB disk)
+    FDFORMAT A: /F:1.72                              (format 1.72 MB disk)
+    FDFORMAT A: /T:80 /N:9                            (format 720 kB disk)
+    FDFORMAT A: /O                    (format 720 kB disk for AT&T M24/28)
+    FDFORMAT A: /F:720 M$F7 B$54         (format 720 kB disk for ATARI ST)
+    FDFORMAT A: /F:12 D64                (format 1.2 MB disk with 64 RDEs)
+    FDFORMAT A: /F:410 R               (format 410 kB Disk without verify)
+```
 
 
 DETAILED DESCRIPTION OF OPTIONS
@@ -243,12 +249,14 @@ The Nnnn option - Use nnn Sectors per Track
 This option determines the number of sectors per track you will use. 
 The standard and default values for the different formats are:
 
-disk format standard value maximum value possible
------------ -------------- ----------------------
-360 kB            9                  10
-720 kB            9                  10
-1.2 MB           15                  18
-1.44 MB          18                  21
+```
+    disk format standard value maximum value possible
+    ----------- -------------- ----------------------
+    360 kB            9                  10
+    720 kB            9                  10
+    1.2 MB           15                  18
+    1.44 MB          18                  21
+```
 
 You may use this option to increase the storage of your diskette too.
 
@@ -277,10 +285,14 @@ Since diskettes use usually 2 sided, you can simplify this formula to:
 
       storage in kB = tracks * sectors
 
-Examples: FORMAT A: /T:80 /N:9 /H:2 (format a 720 kB disk)
+Examples:
+
+```
+          FORMAT A: /T:80 /N:9 /H:2 (format a 720 kB disk)
           FORMAT A: /T:82 /N:10 /H:2 (format a 820 kB disk)
           FORMAT A: /T:40 /N:9 /H:2 (format a 360 kB disk)
           FORMAT A: /T:41 /N:10 /H:2 (format a 410 kB disk)
+```
 
 You can use the F-Option (described above) as a shortcut for the T, H 
 and N options (eg. FORMAT A: /F:1.44 is equal to FORMAT A: /T:80 /N:18 
@@ -293,15 +305,16 @@ with 10 sectors and below.
 Look at the following table to see, which values are maximum for T, H 
 and N.
 
-Drive and disk                  max T  max N  max H Storage
-------------------------------  -----  -----  ----- -------
-360 kB drive with DD-diskette    41     10      2    410 kB
-720 kB drive with DD-diskette    82     10      2    820 kB
-1.2 MB drive with DD-diskette    82     10      2    820 kB
-1.2 MB drive with HD-diskette    82     18      2   1.48 MB
-1.44 MB drive with DD-diskette   82     10      2    820 kB
-1.44 MB drive with DD-diskette   82     21      2   1.72 MB
-
+```
+    Drive and disk                  max T  max N  max H Storage
+    ------------------------------  -----  -----  ----- -------
+    360 kB drive with DD-diskette    41     10      2    410 kB
+    720 kB drive with DD-diskette    82     10      2    820 kB
+    1.2 MB drive with DD-diskette    82     10      2    820 kB
+    1.2 MB drive with HD-diskette    82     18      2   1.48 MB
+    1.44 MB drive with DD-diskette   82     10      2    820 kB
+    1.44 MB drive with DD-diskette   82     21      2   1.72 MB
+```
 
 The Cnnn option - Use nnn sectors per cluster (1 or 2)
 ------------------------------------------------------
@@ -394,6 +407,7 @@ the FDFORMAT command (See your DOS Manual for piping input and
 output). FDFORMAT returns an exit code or errorlevel, which can be 
 used in batch files. The exit codes are:
 
+```
 Exit Code Meaning
 --------- ----------------------------------------------------
   0       normal completion
@@ -405,6 +419,7 @@ Exit Code Meaning
  16       syntax error or illegal parameters in config file
  32       error writing disk label
 128       incorrect DOS version (< 3.20)
+```
 
 
 The S Option - Format system disk
@@ -421,9 +436,11 @@ Note: You cannot create a system disk, which cannot be read without
 FDREAD.
 
 
+```
 Example: FDFORMAT A: /F:360 /S (correct)
          FDFORMAT A: /F:410 /S (incorrect, because this
                                 format requires FDREAD)
+```
 
 The 1 Option - Single sided disk
 --------------------------------
@@ -497,11 +514,13 @@ sliding in the FDFORMAT.CFG file (described later). You have to find
 out this for each format seperately. Always good choices are the 
 following:
 
+```
 Disk-Size          Good choice for sector sliding
 ------------------ ------------------------------
 320-410 kB              /X:1 /Y:3
 720-820 kB              /X:1 /Y:2
 1.2 MB-1.72 MB          /X:2 /Y:3
+```
 
 This will improve your diskette perfomance 50%-100% on almost any 
 system.
@@ -581,6 +600,7 @@ be set, if you have an incompatible or older BIOS, which does not
 support 1.44 MByte Drives. It is configurable in the FDFORMAT.CFG file 
 described later. This byte is made out of the following components:
 
+```
 Group Decimal Hexadecimal  Meaning
 -----------------------------------------------------------------
          0         0       Media Type unknown
@@ -602,16 +622,19 @@ Group Decimal Hexadecimal  Meaning
          5         5       1.2 MB Disk in 1.2 MB Drive, checked
  4       7         7       state not defined (3½"-Drive)
 -----------------------------------------------------------------
+```
 
 To get the correct value for your format, select one Value out of each 
 group and add these values. Normally the media type byte is set 
 correctly, following these rules:
 
+```
 Group 1: Always set to 16
 Group 2: 32, if tracks from 1-43, else 0
 Group 3: high density disks: always 0 double density disks: 64 for
          5¼"-Disks, 128 for 3½"-Disks
 Group 4: always set to 3
+```
 
 Why set group 4 always to 3? There is a problem with DTK-BIOS. DTK-
 BIOS seems not to work with any other value than 3. All other BIOS 
@@ -621,7 +644,6 @@ System will not work with the default value. In this case, try out any
 value from 0-7 for Group 4. It should work with at least one value. If 
 you have determined the correct value, you can write it in the 
 FDFORMAT.CFG file.
-
 
 
 CONFIGURING FDFORMAT WITH FDFORMAT.CFG
@@ -727,10 +749,10 @@ Sample Configuration Files
 --------------------------
 
 
-
+```
 A: XT PC80=64               720 kB drive in XT like AT&T M24
 A: AT F=7                   1.44 MB drive in AT or XT
 A: AT F=1                   1.2 MB drive in AT or XT
 A: AT F=2 360=$74 720=$57   720 kB 5¼"-Drive in AT
 A: AT F=2 360=$73 720=$53   720 kB 5¼"-Drive in AT & DTK-BIOS
-
+```
