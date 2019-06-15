@@ -1,26 +1,9 @@
 # fdformat
-FDFORMAT - Format Disks with higher Capacity
+FDFORMAT - Format Floppy Disks with Higher Capacity
 
-THANKS
-------
+This project is of historic interest only. I worked on it between 1988 and 1991.
 
-Special thanks to the following people:
-
-Jochen Roderburg: For suggestions and improvements to support 
-compatibility with several BIOS-Versions.
-
-Michael Ho: For an improvement in sector sliding.
-
-Joel Armengaud: For supporting automatic detection of 720 kByte 
-diskettes in FDREAD.
-
-Jörg-Stefan Sell: For supporting an interface routine to less 
-compatible XT computers.
-
-Michael D. Lawler: For lots of suggestions of improvemnts.
-
-Peter Summers: For an improvement in FDREAD/FDR88
-
+It runs under MS-DOS 3.20 or higher and also Windows 95/98/ME. 
 
 SYSTEM REQUIREMENTS
 -------------------
@@ -756,3 +739,25 @@ A: AT F=1                   1.2 MB drive in AT or XT
 A: AT F=2 360=$74 720=$57   720 kB 5¼"-Drive in AT
 A: AT F=2 360=$73 720=$53   720 kB 5¼"-Drive in AT & DTK-BIOS
 ```
+
+THANKS
+------
+
+Special thanks to the following people:
+
+Jochen Roderburg: For suggestions and improvements to support 
+compatibility with several BIOS-Versions.
+
+Michael Ho: For an improvement in sector sliding.
+
+Joel Armengaud: For supporting automatic detection of 720 kByte 
+diskettes in FDREAD.
+
+Jörg-Stefan Sell: For supporting an interface routine to less 
+compatible XT computers.
+
+Michael D. Lawler: For lots of suggestions of improvemnts.
+
+Peter Summers: For an improvement in FDREAD/FDR88
+
+
