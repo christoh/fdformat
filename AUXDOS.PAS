@@ -83,6 +83,6 @@ BEGIN
   TextRec(stderr).Handle:=StdErrHandle;                      {Standard-Error is DOS-File-Handle 2}
   TextRec(stderr).BufPtr:=@TextRec(stderr).Buffer;                            {set our own Buffer}
   GetIntVec($1B,old1B);                                            {Save old Ctrl-Break interrupt}
-  GetIntVec($13,old23);
+  GetIntVec($23,old23);
   ExitProc:=@DefExitProc;                             {Restore Ctrl-Break-Interrupt, when exiting}
 END.
